@@ -16,14 +16,13 @@ import java.util.Map;
  * 其中第一个参数prefix表示，只获取yaml配置文件中定义的person对象的属性进行一一映射
  * prefix="person"
  *
- * @Component注解： 将Person类加入到容器中
- * 关于@Component注解的作用
- * 参考：https://blog.csdn.net/wenhuakulv2008/article/details/132577138
- *
  * 注意：读取yaml文件时，@ConfigurationProperties注解的类中必须有getter/setter方法，否则在test中测试
  * 也是拿不到数据的，所有变量拿到的值都是null
  * 问题解决，参考文档：https://blog.csdn.net/eagle_321/article/details/119039386
  *
+ * @Component注解： 将Person类加入到容器中
+ * 关于@Component注解的作用
+ * 参考：https://blog.csdn.net/wenhuakulv2008/article/details/132577138
  *
  *
  */

@@ -12,7 +12,10 @@ import org.springframework.test.context.junit4.SpringRunner;
  * 可以在测试期间，类似编码一样，自动注入到容器的功能
  *
  * @RunWith(SpringRunner.class)
- * 单元测试使用Spring的解析器，而不使用JUnit
+ * 单元测试使用Spring的驱动器来跑，而不使用JUnit
+ *
+ * @AutoWired wired adj.连线的，联网的，兴奋不安的
+ * v.wire的过去式，使……连线，给……接通电源
  *
  *
  */
