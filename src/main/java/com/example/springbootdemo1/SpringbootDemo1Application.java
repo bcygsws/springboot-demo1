@@ -2,8 +2,12 @@ package com.example.springbootdemo1;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ImportResource;
 
+// @ImportResource是后来加的，使得spring boot的配置文件beans.xml生效
+// @ImportResource(locations = {"classpath:beans.xml"})
 @SpringBootApplication
+// 主配置类
 public class SpringbootDemo1Application {
 
 	public static void main(String[] args) {
