@@ -94,6 +94,22 @@ import java.util.Map;
  * }
  *
  * 五、配置文件占位符
+ * 5.1 在application.properties和yml文件中都可以使用
+ * 5.2 占位符语法
+ * 配置文件中的值：
+ * a.可以写随即数${random.uuid}  ${random.int}
+ * b.使用其他变量的占位符 ${person.name};例如：小狗名称使用了dog${person.name}
+ * c.承接b,如果配置文件中，person.lastName被注释掉，但是Person类仍然有lastName，这时候person对象，lastName的值为null;${person.lastName}会作为字符原样输出
+ * d.如果占位符中使用，没有在配置文件中和当前Person类中定义的属性，例如：person.hello属性，则代码不会报错，将${person.hello}原样输出；
+ * 当然，也可以为不存在的属性，设置一个默认值，指示变量不存在就使用默认值
+ * application.properties
+ *
+ * person.dog.name=${person.hello: hello}dog
+ * 分析：hello属性在配置文件和当前类中都没有定义，而且指定了默认值，那就使用默认值
+ * 在测试类中方法输出，person.dog.name=hellodog
+ *
+ *
+ *
  *
  *
  *
@@ -101,8 +117,8 @@ import java.util.Map;
 @Component
 // @Validated
 @ConfigurationProperties(prefix = "person")
-@PropertySource(value = "classpath:person.properties")
-@ImportResource
+// @PropertySource(value = "classpath:person.properties")
+// 注解@PropertySource
 // 一、获取默认配置文件（默认文件是，名称为application.properties或者application.yml）中的变量值
 // 1.1 使用注解@ConfigurationProperties
 // 1.2 使用@Value()注解
