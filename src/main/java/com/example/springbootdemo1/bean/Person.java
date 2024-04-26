@@ -83,14 +83,20 @@ import java.util.Map;
  * 4.1 创建一个配置类 config.MyAppConfig，加上注解@Configuration，指明当前类是一个配置类（替代之前的Spring配置文件的）
  * 4.1.1 配置类=======beans.xml(测试这种方式时，注释掉主配置中的@ImportResources注解，此时beans.xml失效)
  * 4.1.2 定义个方法helloService(),并添加注解@Bean,方法的返回值是HelloService()
- * 
- * 表示当前类是一个配置类，类似之前的配置文件beans.xml
- *  @Configuration
+ * 伪代码：
+ *
+ *
+ * @Configuration
  * public class MyAppConfig {
  * @Bean
  * public HelloService helloService(){
  *   return new HelloService();
  * }
+ *
+ * 五、配置文件占位符
+ *
+ *
+ *
  */
 @Component
 // @Validated
@@ -101,7 +107,6 @@ import java.util.Map;
 // 1.1 使用注解@ConfigurationProperties
 // 1.2 使用@Value()注解
 // 二、获取指定路径的文件中的值,使用注解@PropertySource()
-
 
 public class Person {
 	// ${key}方式,读取配置文件中person.lastName的值
